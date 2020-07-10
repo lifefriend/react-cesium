@@ -1,14 +1,12 @@
 import React,{ useEffect }from 'react';
-import Cesium from "cesium/Cesium";
-import buildModuleUrl from 'cesium/Core/buildModuleUrl';
+import * as Cesium from 'cesium';
 
-import 'cesium/Widgets/widgets.css'
+import 'cesium/Source/Widgets/widgets.css';
 import './App.css';
-
-buildModuleUrl.setBaseUrl('./');
 
 function App() {
   useEffect(() => {
+    Cesium.buildModuleUrl.setBaseUrl('./');
     new Cesium.Viewer('cesiumContainer');
   }, []);
   return (
